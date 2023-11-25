@@ -1,28 +1,33 @@
+import { Entity } from "typeorm";
 import BaseAuthor from "../core/BaseAuthor";
-import {Column} from "typeorm";
+import { Column } from "typeorm";
 
-export class Author extends BaseAuthor {
-    @Column()
-    nombre : string
 
+@Entity({ name: "autores" })
+class Author extends BaseAuthor {
     @Column()
-    apellido : string
-
-    @Column()
-    telefono : string
+    nombre: string
 
     @Column()
-    direccion : string
+    apellido: string
 
     @Column()
-    ciudad : string
+    telefono: string
 
     @Column()
-    estado : string
+    direccion: string
 
     @Column()
-    pais : string
+    ciudad: string
 
     @Column()
-    cod_postal : number
+    estado: string
+
+    @Column()
+    pais: string
+
+    @Column()
+    cod_postal: number
 }
+
+export default Author

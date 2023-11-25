@@ -1,6 +1,8 @@
 import BaseTitles from "../core/BaseTitles";
-import { Column } from "typeorm";
+import { Column, Entity } from "typeorm";
 
+
+@Entity({ name: "titulos" })
 export default class Title extends BaseTitles {
     @Column()
     titulo: string
