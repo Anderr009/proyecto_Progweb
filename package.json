@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "build": "npx tsc",
     "dev": "npx ts-node ./src/api/app.ts"
   },
   "keywords": [],
