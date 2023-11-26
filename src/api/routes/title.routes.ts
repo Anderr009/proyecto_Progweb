@@ -82,9 +82,9 @@ titleRouter.put("/title", async (req, res) => {
 
 //metodo delete
 titleRouter.delete("/title", async (req, res) => {
-    const { id_autor } = req.body;
+    const { id } = req.body;
     const titleToRemove = new TitleDtoRemove();
-    titleToRemove.id = id_autor;
+    titleToRemove.id = id;
     const result = await titleService.Remove(titleToRemove);
     res.status(200).json(result);
 

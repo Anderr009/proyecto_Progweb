@@ -2,7 +2,6 @@ import { Router } from "express";
 import AuthorService from "../../application/service/AuthorService";
 import AuthorRepository from "../../infraestructure/Repository/AuthorRepository";
 import config from "../config";
-import { DataSourceOptions } from "typeorm";
 import AuthorDtoAdd from "../../application/dto/Author/AuthorDtoAdd";
 import AuthorDtoUpdate from "../../application/dto/Author/AuthorDtoUpdate";
 import AuthorDtoRemove from "../../application/dto/Author/AuthorDtoRemove";

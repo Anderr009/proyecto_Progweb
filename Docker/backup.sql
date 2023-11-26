@@ -32,8 +32,6 @@ CREATE TABLE `autores` (
 -- 
 -- Volcar la base de datos para la tabla `autores`
 -- 
-create table contacto( id varchar(50) not null , nombre varchar(25) not null, email varchar(40) not null,asunto text not null, comentario text not null, fecha
-datetime);
 
 INSERT INTO `autores` VALUES ('172-32-117', 'White', 'Johnson   ', '408-496-7210', 'BiggMenlo ', 'Park', 'CA', 'USA', 94025);
 INSERT INTO `autores` VALUES ('213-46-891', 'Green', 'Marjorie  ', '415 986-7030', '63rd', 'SOakland', 'CA', 'USA', 94618);

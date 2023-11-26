@@ -6,6 +6,8 @@ import ServiceResult from "../core/ServiceResult";
 import TitleDtoAdd from "../dto/Title/TitleDtoAdd";
 import TitleDtoRemove from "../dto/Title/TitleDtoRemove";
 import TitleDtoUpdate from "../dto/Title/TitleDtoUpdate";
+import TitleDtoGetCategories from "../dto/Title/TitleDtoGetCategories";
+import TitleDtoBase from "../dto/Title/TitleDtoBase";
 
 class TitleService implements ITitleService {
     private readonly titleRepository: TitleRepository
@@ -90,11 +92,20 @@ class TitleService implements ITitleService {
     }
     async GetCategories(): Promise<ServiceResult> {
         const serviceResult = new ServiceResult();
-
+ 
         try {
+            const titles = await this.titleRepository.GetEntities({});
             const categories = await this.titleRepository.GetCategories();
-
-            serviceResult.data = categories;
+            //recorriendo las categorias
+             const  data = categories.map((category) => {
+                //recorriendo los titulos
+                const result = titles.filter((title)=>title.tipo === category.tipo);
+                const dataFiltered = new TitleDtoGetCategories()
+                dataFiltered.tipo = category.tipo;
+                dataFiltered.titles = result;
+                return dataFiltered;
+            });
+            serviceResult.data = data;
             serviceResult.message = "categorias obtenidas con exito";
         } catch (err) {
             serviceResult.success = false;

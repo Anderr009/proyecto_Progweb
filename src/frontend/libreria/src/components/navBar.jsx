@@ -3,7 +3,7 @@ import Link from "next/link"
 
 function NavBar() {
     return (
-        <div className="navbar navbar-expand-lg bg-body-tertiary">
+        <div className="navbar navbar-expand-lg bg-body-tertiary" style={{borderBottom:"1px solid" }}>
             <div className="container-fluid">
                 <Link className="navbar-brand" href="/">Home</Link>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
